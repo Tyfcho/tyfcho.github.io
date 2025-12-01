@@ -1,95 +1,103 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dev Portfolio — Your Name</title>
+    <title>Dev Portfolio — Tycho</title>
     <meta name="description" content="Developer portfolio showcasing projects, skills and contact info." />
     <link rel="stylesheet" href="styles.css">
-    <meta name="theme-color" content="#0f1115" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <a class="logo" href="#">YourName</a>
+</head>
+<body>
+<!-- Navbar -->
+<header class="site-header">
+    <div class="container">
+        <a class="logo" href="index.html">
+            <img src="https://avatars.githubusercontent.com/u/25345689?v=4" alt="Avatar">
+            Tyfcho
+        </a>
         <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
         </nav>
-      </div>
-    </header>
+    </div>
+</header>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <h1>Hi — I'm Tycho</h1>
-          <p class="lead">I&apos;m a Software Engineer from the Netherlands.</p>
-          <p class="cta">
-            <a class="btn" href="#projects">See projects</a>
-            <a class="btn ghost" href="#contact">Get in touch</a>
-          </p>
-        </div>
-      </section>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1 class="animate">Hi — I'm Tycho</h1>
+        <p class="lead animate">Software Engineer from the Netherlands</p>
+        <p class="cta animate">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn ghost" href="#about">Learn More</a>
+        </p>
+    </div>
+</section>
 
-      <section id="about" class="container section about">
-        <h2>About</h2>
-        <p>I enjoy finding out new ways to streamline both my own as well as my circle's workflows.</p>
-      </section>
+<!-- About Section -->
+<section id="about" class="container section about animate">
+    <h2>About</h2>
+    <p>I enjoy discovering new ways to streamline workflows for myself and my circle. I love combining creativity with engineering to make systems that work smoothly.</p>
+</section>
 
-      <section id="projects" class="container section projects">
-        <h2>Selected projects</h2>
-        <div class="grid">
-          <article class="card">
+<!-- Projects Section -->
+<section id="projects" class="container section projects">
+    <h2 class="animate">Selected Projects</h2>
+    <div class="grid">
+        <article class="card animate">
             <h3>Software Engineer @ Kropman</h3>
             <p>Programming HVAC Systems using Priva</p>
-            <p class="meta">Priva</p>
-          </article>
+            <div class="chips">
+                <span class="chip priva">TC Engineer</span>
+                <span class="chip java">Java</span>
+                <span class="chip python">Python</span>
+                <span class="chip github">GitHub</span>
+            </div>
+            <div class="cta">
+                <a href="https://www.priva.com/" class="btn">Learn More</a>
+            </div>
+        </article>
 
-          <article class="card">
+        <article class="card animate">
             <h3>FantasieCraft</h3>
             <p>A Minecraft Themepark server with custom addons and plugins.</p>
-            <p class="meta">Java · Python · HTML · CSS</p>
-          </article>
+            <div class="chips">
+                <span class="chip java">Java</span>
+                <span class="chip python">Python</span>
+                <span class="chip html">HTML</span>
+                <span class="chip css">CSS</span>
+            </div>
+            <div class="cta">
+                <a href="https://www.fantasiecraft.be/" class="btn">Learn More</a>
+            </div>
+        </article>
+    </div>
+</section>
 
-           <!--
-          <article class="card">
-            <h3>Project Three</h3>
-            <p>Automation, CI/CD or infrastructure-as-code sample.</p>
-            <p class="meta">GitHub Actions · Terraform</p>
-            <p><a href="#" class="link">View repo</a></p>
-          </article>
-          -->
-        </div>
-      </section>
 
-      <section id="skills" class="container section skills">
-        <h2>Skills</h2>
-        <ul class="chips">
-          <li>Java</li>
-          <li>Python</li>
-          <li>GitHub</li>
-          <li>TC Engineer</li>
-          <li>HTML</li>
-        </ul>
-      </section>
-
-      <!--<section id="contact" class="container section contact">
-        <h2>Contact</h2>
-        <p>Want to collaborate or see more? Send an email: <a href="mailto:me@example.com">me@example.com</a></p>
-        <p>Or find me on <a href="https://github.com/yourusername">GitHub</a> · <a href="#">LinkedIn</a></p>
-      </section>-->
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
         <small>&copy; <span id="year"></span> Tyfcho — Deployed on GitHub Pages.</small>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
+<!-- Scripts -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Animate elements on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll('.animate');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        elements.forEach(el => observer.observe(el));
+    });
+</script>
+</body>
 </html>
