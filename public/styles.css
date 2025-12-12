@@ -136,6 +136,7 @@ html, body {
 .card .chip.css { background: #264de4; }
 .card .chip.github { background: #333; }
 .card .chip.priva { background: #031424; }
+.card .chip.kotlin { background: #8c3ce7; }
 
 .about {
     background: rgba(0, 0, 0, 0.25); /* semi-transparent black */

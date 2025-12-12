@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Placeholder — Tycho</title>
+    <meta name="description" content="Developer portfolio showcasing projects, skills and contact info." />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Navbar -->
+<header class="site-header">
+    <div class="container">
+        <a class="logo" href="index.html">
+            <img src="https://avatars.githubusercontent.com/u/25345689?v=4" alt="Avatar">
+            Tyfcho
+        </a>
+        <nav class="nav">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1 class="animate">Hi — I'm Tycho</h1>
+        <p class="lead animate">You're currently looking at a page that is not available at this time.</p>
+        <p class="animate">Feel free to return to the <a href="index.html">homepage</a> or explore other sections of my portfolio.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <small>&copy; <span id="year"></span> Tyfcho — Deployed on GitHub Pages.</small>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Animate elements on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll('.animate');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        elements.forEach(el => observer.observe(el));
+    });
+</script>
+</body>
+</html>
