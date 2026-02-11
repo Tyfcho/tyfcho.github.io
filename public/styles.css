@@ -181,3 +181,152 @@ html, body {
     .site-header .container { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .nav { flex-wrap: wrap; }
 }
+
+
+/* ============================= */
+/* WORK EXPERIENCE TIMELINE      */
+/* ============================= */
+
+#workexp {
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Center vertical line */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background: rgba(255,255,255,0.25);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline item container */
+.timeline-container {
+    position: relative;
+    width: 50%;
+    padding: 1rem 2.5rem;
+}
+
+/* Left side */
+.timeline-container.left {
+    left: 0;
+    text-align: right;
+}
+
+/* Right side */
+.timeline-container.right {
+    left: 50%;
+}
+
+/* Marker (circle on center line) */
+.timeline-marker {
+    position: absolute;
+    top: 30px;
+    width: 18px;
+    height: 18px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
+    z-index: 2;
+    transition: transform 0.4s ease;
+}
+
+/* Marker positioning */
+.timeline-container.left .timeline-marker {
+    right: -9px;
+}
+
+.timeline-container.right .timeline-marker {
+    left: -9px;
+}
+
+/* Hover animation on marker */
+.timeline-container:hover .timeline-marker {
+    transform: scale(1.2);
+}
+
+/* Timeline content card override */
+.timeline-content {
+    position: relative;
+}
+
+/* Directional arrow */
+.timeline-container.left .timeline-content::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: -12px;
+    border: 8px solid transparent;
+    border-left-color: var(--card-bg);
+}
+
+.timeline-container.right .timeline-content::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -12px;
+    border: 8px solid transparent;
+    border-right-color: var(--card-bg);
+}
+
+/* Slight horizontal entrance animation */
+.timeline-container.left.animate {
+    transform: translateX(-40px);
+}
+
+.timeline-container.right.animate {
+    transform: translateX(40px);
+}
+
+.timeline-container.visible {
+    transform: translateX(0);
+}
+
+/* ============================= */
+/* RESPONSIVE                    */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .timeline::after {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 1rem;
+        text-align: left !important;
+    }
+
+    .timeline-container.right {
+        left: 0;
+    }
+
+    .timeline-marker {
+        left: 11px !important;
+        right: auto !important;
+    }
+
+    .timeline-content::before {
+        left: -12px !important;
+        right: auto !important;
+        border-right-color: var(--card-bg) !important;
+        border-left-color: transparent !important;
+    }
+}
+.about p {
+    margin-top: 1.8rem;
+}
