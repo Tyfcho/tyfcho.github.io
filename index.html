@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dev Portfolio — Tycho</title>
+    <meta name="description" content="Developer portfolio showcasing projects, skills and contact info." />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .mobile-warning {
+            display: none;
+            background-color: #FFD700;
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .mobile-warning button {
+            margin-left: 10px;
+            padding: 3px 8px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .mobile-warning button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<header class="site-header">
+    <div class="container">
+        <a class="logo" href="index.html">
+            <img src="https://avatars.githubusercontent.com/u/25345689?v=4" alt="Avatar">
+            Tyfcho
+        </a>
+        <nav class="nav">
+            <a href="#workexp">Work Experience</a>
+            <a href="#projects">Passion Projects</a>
+        </nav>
+    </div>
+</header>
+<div class="mobile-warning" id="mobile-warning">
+    Warning: Your experience may be affected while on a mobile device. For the best experience, use a desktop.
+    <button onclick="document.getElementById('mobile-warning').style.display='none';">Dismiss</button>
+</div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1 class="animate">Hi — I'm Tycho</h1>
+        <p class="lead animate">Software Engineer from the Netherlands</p>
+        <p class="cta animate">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn ghost" href="#about">Learn More</a>
+        </p>
+    </div>
+</section>
+<!-- About Section -->
+<section id="about" class="container section about animate">
+    <h2>About</h2>
+    <p>I am currently working at Kropman Installatietechniek, where I create software solutions for climate installations together with my colleagues of Building Automation.
+    For these projects, I use the stack of Priva, which is called TC Engineer.</p>
+    <p>In my free time, I enjoy working on various passion projects, including developing Minecraft theme park servers with custom addons and plugins.
+    These projects allow me to explore my creativity and technical skills in a fun and engaging way.</p>
+    <p>My current function is about translating a technical installation into a control system. In these projects I encounter lots of different aspects, such as defining component details, translation of functional designs to control designs, documenting the software, connection datapoints with various services and visualizing data that comes out of the controller.</p>
+    <p>My interests include software development, computational devices, themeparks, gaming and photography.</p>
+</section>
+<!-- Projects Section -->
+<section id="workexp" class="container section">
+    <h2 class="animate">Working experience</h2>
+    <div class="timeline">
+        <div class="timeline-container left animate">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content card">
+                <span class="timeline-date">2024 - Current</span>
+                <h3>Software Engineer @ Kropman</h3>
+                <p class="meta">Programming HVAC Systems using Priva</p>
+                <div class="chips">
+                    <span class="chip priva">TC Engineer</span>
+                    <span class="chip html">HTML</span>
+                    <span class="chip css">Electronics</span>
+                </div>
+                <div class="cta">
+                    <a href="https://www.kropman.nl" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-container right animate">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content card">
+                <span class="timeline-date">April 2023 - July 2023</span>
+                <h3>Intern Smart Technology @ Cermax</h3>
+                <p class="meta">Internship project at Cermax using LOGO! by Siemens</p>
+                <div class="chips">
+                    <span class="chip priva">TIA Portal</span>
+                    <span class="chip css">LOGO!soft</span>
+                    <span class="chip html">HTML</span>
+                    <span class="chip css">Electronics</span>
+                </div>
+                <div class="cta">
+                    <a href="https://www.cermax.nl" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-container left animate">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content card">
+                <span class="timeline-date">August 2021 - February 2022</span>
+                <h3>Intern Smart Technology @ Alphatron</h3>
+                <p class="meta">Internship in the Automotive+Security section of Alphatron</p>
+                <div class="chips">
+                    <span class="chip priva">C++</span>
+                    <span class="chip html">CAD</span>
+                    <span class="chip css">Electronics</span>
+                    <span class="chip java">Linux &amp; Bash</span>
+                </div>
+                <div class="cta">
+                    <a href="https://www.alphatron.com/alphatron-bedrijven/alphatron-security" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section id="projects" class="container section projects">
+    <h2 class="animate">Passion Projects</h2>
+    <div class="grid">
+        <article class="card animate">
+            <h3>FantasieCraft Resort</h3>
+            <p>A Minecraft Themepark server with custom addons and plugins.</p>
+            <div class="chips">
+                <span class="chip java">Java</span>
+                <span class="chip kotlin">Kotlin</span>
+                <span class="chip python">Python</span>
+                <span class="chip html">HTML</span>
+                <span class="chip css">CSS</span>
+            </div>
+            <div class="cta">
+                <a href="placeholder.html" class="btn">Coming soon...</a>
+            </div>
+        </article>
+        <article class="card animate">
+            <h3>ParadiseCraft Themepark</h3>
+            <p>A Minecraft Themepark server with custom addons and plugins.</p>
+            <div class="chips">
+                <span class="chip java">Java</span>
+                <span class="chip kotlin">Kotlin</span>
+                <span class="chip python">Python</span>
+                <span class="chip html">HTML</span>
+                <span class="chip css">CSS</span>
+            </div>
+            <div class="cta">
+                <a href="placeholder.html" class="btn">Coming soon...</a>
+            </div>
+        </article>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <small>&copy; <span id="year"></span> Tyfcho — Deployed on GitHub Pages.</small>
+    </div>
+</footer>
+<!-- Scripts -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Animate elements on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll('.animate');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        elements.forEach(el => observer.observe(el));
+        // Mobile detection
+        const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        if (isMobile) {
+            document.getElementById('mobile-warning').style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>
