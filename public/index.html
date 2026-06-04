@@ -117,7 +117,6 @@
             <p>A motorcycling/golfing community based in the Netherlands.</p>
             <div class="chips">
                 <span class="chip java">Next.js</span>
-                <span class="chip kotlin">Sanity</span>
                 <span class="chip python">Tailwind CSS V4</span>
                 <span class="chip html">Framer Motion</span>
                 <span class="chip css">Lucide React</span>
@@ -180,6 +179,11 @@
             });
         }, { threshold: 0.2 });
         elements.forEach(el => observer.observe(el));
+        // Mobile detection
+        const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        if (isMobile) {
+            document.getElementById('mobile-warning').style.display = 'block';
+        }
     });
 </script>
 </body>
