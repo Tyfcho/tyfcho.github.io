@@ -1,10 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
+<style>
+    .sadkitty {
+        border-radius: 8px;
+    }
+</style>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DataWeaver — Tycho</title>
+    <meta name="description" content="Developer portfolio showcasing projects, skills and contact info." />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .mobile-warning {
+            display: none;
+            background-color: #FFD700;
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .mobile-warning button {
+            margin-left: 10px;
+            padding: 3px 8px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .mobile-warning button:hover {
+            background: #555;
+        }
+    </style>
 </head>
 <body>
+<!-- Navbar -->
+<header class="site-header">
+    <div class="container">
+        <a class="logo" href="index.html">
+            <img src="https://avatars.githubusercontent.com/u/25345689?v=4" alt="Avatar">
+            Tyfcho
+        </a>
+        <nav class="nav">
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#about">About</a>
+        </nav>
+    </div>
+</header>
+<div class="mobile-warning" id="mobile-warning">
+    Warning: Your experience may be affected while on a mobile device. For the best experience, use a desktop.
+    <button onclick="document.getElementById('mobile-warning').style.display='none';">Dismiss</button>
+</div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-content">
+        <p class="lead animate">You're currently looking at a page that is not available at this time.</p>
+        <img class="sadkitty animate" src="media/standing-kitty.gif" alt="Placeholder GIF">
+        <p class="animate">Feel free to return to the <a href="index.html">homepage</a> or explore other sections of my portfolio.</p>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <small>&copy; <span id="year"></span> Tyfcho — Deployed on GitHub Pages.</small>
+    </div>
+</footer>
+<!-- Scripts -->
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Animate elements on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll('.animate');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        elements.forEach(el => observer.observe(el));
 
+        // Mobile detection
+        const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        if (isMobile) {
+            document.getElementById('mobile-warning').style.display = 'block';
+        }
+    });
+</script>
 </body>
 </html>

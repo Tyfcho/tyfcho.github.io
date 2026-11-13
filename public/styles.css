@@ -108,7 +108,13 @@ html, body {
 .section h2 { font-size: 2rem; margin-bottom: 2rem; }
 
 /* Projects / Cards */
-.projects .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.projects .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr)); /* Altijd 3 vaste kolommen */
+    gap: 2rem;
+    justify-content: center;
+}
+
 .card {
     background: var(--card-bg);
     padding: 2rem;
@@ -117,6 +123,29 @@ html, body {
     transition: transform var(--transition), box-shadow var(--transition);
     backdrop-filter: blur(8px);
 }
+
+/*
+  --- DE POSITIE-LOGICA VOOR EEN 3-KOLOMS RASTER ---
+  Dit zorgt ervoor dat als je er bijvoorbeeld 4 hebt, kaart 4 op positie 5 valt (kolom 2 van rij 2).
+*/
+
+/* Als er exact 4 kaarten zijn: kaart 4 moet naar kolom 2 */
+.card:nth-child(4):nth-last-child(1) {
+    grid-column: 2;
+}
+
+/* Als er exact 5 kaarten zijn (totaal 5 items, dit is de 4e):
+   Dan moeten kaart 4 en 5 op de onderste rij komen (kolom 1 en 3, of kolom 2 en 3, etc.)
+   Maar met jouw logica ("4 tussen 4 en 5, en 5 tussen 5 en 6"):
+*/
+
+/* De 'magische' truc voor Flexbox als je wilt dat de laatste rij netjes uitlijnt
+   wanneer er minder items zijn dan de max per rij: */
+.projects .grid::after {
+    content: "";
+    flex: 0 1 320px; /* Moet exact dezelfde breedte hebben als .card */
+}
+
 .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
 .card h3 { margin-bottom: 0.5rem; }
 .card p { color: var(--muted); margin-bottom: 1rem; }
